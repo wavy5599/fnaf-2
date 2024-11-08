@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Five Night's At Freddy's 2</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+</head>
+<body> 
+<div class="static-container">
+    <div class="title">
+        <div class="title-text">
+          <h2>
+           Five
+          </h2>
+        </div>
+        <div class="title-text">
+           <h2>
+          Night's
+           </h2> 
+        </div>
+        <div class= "title-text">
+            <h2>
+             At
+            </h2>
+        </div>
+        <div class="title-text">
+            <h2>
+            Freddy's
+            </h2>
+        </div>
+        <div class="title-text">
+            <h2>
+            2
+            </h2>
+        </div>
+    </div>
+    <div class="options">
+
+        <div class="item-1">
+            <a href="/start-night.html">New Game</a>
+        </div>
+
+        <br>
+
+        <div class="item-2">
+            <a href="">Continue</a>
+        </div>
+        
+       
+    </div>
+    <!-- Multiple static layers for depth and randomness -->
+    <div class="static-layer"></div>
+    <div class="static-layer"></div>
+    <div class="static-layer"></div>
+    <div class="static-layer"></div>
+
+    <!-- Scan lines layer for glitchy effect -->
+    <div class="scan-lines"></div>
+</div>
+<audio id="sound" src="/audio/Voicy_FNaF 2 menu music copy.mp3" autoplay loop >
+</audio>
+<script>
+
+ // Ensure the audio starts playing when the page is loaded
+ window.onload = function() {
+            const audio = document.getElementById("sound");
+            if (audio) {
+                audio.play();
+            }
+        }
+
+
+
+
+    // JavaScript to create randomized static layers
+    const container = document.querySelector('.static-container');
+
+    // Generate multiple layers for a dynamic static effect
+    for (let i = 0; i < 5; i++) {
+        const staticLayer = document.createElement('div');
+        staticLayer.classList.add('static');
+        staticLayer.style.opacity = Math.random() * 0.2 + 0.1;
+        staticLayer.style.animationDuration = `${Math.random() * 0.15 + 0.1}s`;
+        container.appendChild(staticLayer);
+    }
+
+    // Optional: Create random flicker
+    setInterval(() => {
+        const staticLayers = document.querySelectorAll('.static');
+        staticLayers.forEach(layer => {
+            layer.style.opacity = Math.random() * 0.3 + 0.1;
+        });
+    }, 100);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
